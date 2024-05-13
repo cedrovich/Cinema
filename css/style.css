@@ -1,0 +1,96 @@
+:root{
+    --principal:#ff3355;
+    --secundario:#252525;
+    --blanco: #FFFFFF;
+}
+html{
+    font-family:Verdana, Geneva, Tahoma, sans-serif
+}
+
+/*Todo lo del Header*/
+
+header{
+    background-color: var(--principal);
+}
+
+.nav_principal{
+    color: var(--blanco);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+a{
+    color: var(--blanco);
+    text-decoration: none;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+.headermenuizq{
+    margin-left: 1rem;
+}
+
+.headermenuizq > nav{
+    margin-right: 3rem;
+}
+
+.logo{
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 0;
+}
+.logo > p{
+    margin: 1rem;
+}
+
+.headermenuder{
+    margin-right: 1rem;
+}
+
+/*Todo lo del Body*/
+
+body{
+    background-color: var(--secundario);
+}
+
+.princ{
+    padding: 3rem;
+}
+
+.prom_princ{
+    border-radius: 1rem;
+    background-color: var(--blanco);
+    padding: 8rem 2rem;
+    margin-bottom: 5rem;
+}
+
+.peliculas1{
+    border-top-left-radius: .7rem;
+    border-top-right-radius: .7rem;
+    background-color: var(--blanco);
+    display: flex;
+    justify-content: center;
+}
+
+.peliculas2{
+    border-bottom-left-radius: .7rem;
+    border-bottom-right-radius: .7rem;
+    background-color: var(--blanco);
+    display: flex;
+    justify-content: center;
+}
+
+.pelis{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.pelis > p{
+    border-radius: .7rem;
+    margin: 4rem 1.5rem .5rem 1.5rem;
+    background-color: var(--principal);
+    padding: 8rem 2rem;
+}
+
+/* Todo lo del Footer */
