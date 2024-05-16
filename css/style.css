@@ -1,0 +1,130 @@
+:root{
+    --principal:#ff3355;
+    --secundario:#252525;
+    --blanco: #FFFFFF;
+}
+html{
+    font-family:Verdana, Geneva, Tahoma, sans-serif
+}
+
+/*Todo lo del Header*/
+
+header{
+    background-color: var(--principal);
+}
+
+.nav_principal{
+    color: var(--blanco);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar > a{
+    color: var(--blanco);
+    text-decoration: none;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+.headermenuizq{
+    margin-left: 1rem;
+}
+
+.headermenuizq > nav{
+    margin-right: 3rem;
+}
+
+.logo{
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 0;
+}
+.logo > p{
+    margin: 1rem;
+}
+
+.headermenuder{
+    margin-right: 1rem;
+}
+
+.navbar > a:hover{
+    background-color: var(--blanco);
+    border-radius: .3rem;
+    color: var(--secundario);
+    padding: .3rem;
+}
+
+/*Todo lo del Body*/
+
+body{
+    background-color: var(--secundario);
+}
+
+.princ{
+    padding: 3rem;
+}
+
+.prom_princ{
+    border-radius: 1rem;
+    background-color: var(--blanco);
+    padding: 8rem 2rem;
+    margin-bottom: 5rem;
+}
+
+.peliculas1{
+    border-top-left-radius: .7rem;
+    border-top-right-radius: .7rem;
+    background-color: var(--blanco);
+    display: flex;
+    justify-content: center;
+}
+
+.peliculas2{
+    border-bottom-left-radius: .7rem;
+    border-bottom-right-radius: .7rem;
+    background-color: var(--blanco);
+    display: flex;
+    justify-content: center;
+}
+
+.pelis{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #252525;
+}
+
+.peliculas1 > a{
+    text-decoration: none;
+    margin: 1rem;
+
+}
+
+.pelis:hover{
+    padding: .1rem;
+    background-color: var(--principal);
+    color: var(--blanco);
+}
+
+.peliculas2 > a{
+    text-decoration: none;
+    margin: 1rem;
+}
+
+img{
+    border-radius: 2rem;
+    width: 10rem;
+    margin-top: 2rem;
+    padding: 1rem 2rem ;
+}
+
+.sombra{
+    box-shadow: 0px 0px 15px 0px rgba(112,112,112,0.75);
+-webkit-box-shadow: 0px 0px 15px 0px rgba(112,112,112,0.75);
+-moz-box-shadow: 0px 0px 15px 0px rgba(112,112,112,0.75);
+    background-color: var(--blanco);
+    border-radius: 1rem;
+}
+
+/* Todo lo del Footer */

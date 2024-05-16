@@ -1,0 +1,60 @@
+:root{
+    --principal:#ff3355;
+    --secundario:#252525;
+    --blanco: #FFFFFF;
+}
+html{
+    font-family:Verdana, Geneva, Tahoma, sans-serif
+}
+
+.encabezado{
+    background-color: var(--principal);
+    color: var(--blanco);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row-reverse;
+}
+
+
+
+.tittle{
+    display: flex;
+}
+
+.back > a{
+    text-decoration: none;
+    margin-left: 1rem;
+    color: var(--blanco);
+    font-weight: bold;
+}
+
+.back > a:hover{
+    background-color: var(--blanco);
+    border-radius: .3rem;
+    color: var(--secundario);
+}
+
+/*Todo lo del Body*/
+
+body{
+    background-color: var(--secundario);
+}
+
+.formu{
+    background-color: var(--blanco);
+    margin: 2rem;
+    border-radius: 1rem;
+}
+
+.formu1{
+    margin: 3rem 3rem;
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.campo{
+    margin: 2rem;
+}
