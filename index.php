@@ -12,8 +12,6 @@
         <div class="headermenuizq">
             <nav class="navbar">
                 <a href="addmovies.php">Peliculas</a>
-                <a href="">Proximamente</a>
-                <a href="">Preventas</a>
             </nav>
         </div>
         <div class="logo">
@@ -21,14 +19,13 @@
         </div>
         <div class="headermenuder">
             <nav class="navbar">
-                <select name="" id="">
-                    <option value="">Cinema Merida</option>
-                    <option value="">Cinema Ticul</option>
-                    <option value="">Cinema Acanceh</option>
-                    <option value="">Cinema Dzudzuncan</option>
+                <select id="miSelect" onchange="redireccionar()">
+                    <option value="">Categorias</option>
+                    <option value="animadas.php">Animadas</option>
+                    <option value="comedia.php">Comedia</option>
+                    <option value="romanticas.php">Romanticas</option>
+                    <option value="terror.php">Terror</option>
                 </select>
-                <a href="">Buscar</a>
-                <a href="">Iniciar Sesion</a>
             </nav>
         </div>
     </div>
@@ -112,15 +109,26 @@
     </script>
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js">
     </script>
+
+    
+
     <script class="carru">
         var swiper = new Swiper('.swiper-container', {
-        slidesPerView: 'auto', // Muestra tantas imágenes como quepan en el contenedor
-        spaceBetween: 20, // Espacio entre las imágenes
-        loop: true, // Activa el modo bucle
+        slidesPerView: 'auto',
+        spaceBetween: 20,
+        loop: true,
         autoplay: {
-        delay: 5000, // Intervalo de cambio entre imágenes en milisegundos
-        disableOnInteraction: false, // Permite la interacción del usuario (por ejemplo, hacer clic en una imagen para detener el carrusel)
+        delay: 5000,
+        disableOnInteraction: false,
     },
   });
+
+  function redireccionar() {
+  var seleccion = document.getElementById("miSelect").value;
+  if (seleccion !== "") {
+    window.location.href = "categorias/" + seleccion;
+  }
+}
+
     </script>
 </html>

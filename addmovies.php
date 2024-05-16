@@ -30,6 +30,18 @@
                         </div>
                         <div class="campo">
                             <label for="phone">
+                                Categoria
+                            </label>
+                            <select id="miSelect" onchange="redireccionar()">
+                                <option value="">Categorias</option>
+                                <option value="">Animadas</option>
+                                <option value="">Comedia</option>
+                                <option value="">Romanticas</option>
+                                <option value="">Terror</option>
+                            </select>
+                        </div>
+                        <div class="campo">
+                            <label for="phone">
                                 Sinopsis
                             </label>
                             <input type="text" name="sinop" id="sinop" placeholder="Añade la sinopsis">
@@ -42,7 +54,7 @@
                         </div>
                     </div>
                     <div class="buttom">
-                        <input type="submit" value="Enviar"/>
+                        <input type="submit" value="Añadir"/>
                     </div>
                 </fieldset>
             </form>
