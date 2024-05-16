@@ -68,9 +68,43 @@ body{
 .prom_princ{
     border-radius: 1rem;
     background-color: var(--blanco);
-    padding: 8rem 2rem;
+    padding: 1rem 2rem 3rem 2rem;
     margin-bottom: 5rem;
+    height: 20rem;
+
 }
+
+.photo{
+    width: 27rem;
+    margin-top: 0;
+}
+
+
+.swiper-container {
+    width: 80%;
+    max-width: 1000px; /* Por ejemplo, un ancho máximo de 1000px */
+    margin: 0 23rem;
+  }
+  
+  
+
+/*
+.scroll-content {
+    white-space: nowrap;
+    animation: scrollAnimation 30s linear infinite;
+  }
+
+  @keyframes scrollAnimation {
+    0% {
+        transform: translateX(50%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+*/
+
+
 
 .peliculas1{
     border-top-left-radius: .7rem;

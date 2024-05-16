@@ -4,6 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
     <title>Cinema</title>
 </head>
 <header>
@@ -35,7 +36,17 @@
 <body>
     <div class="princ">
         <div class="prom_princ">
-            <p>*aqui van imagenes de promociones*</p>
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                      <div class="swiper-slide"><img class="photo" src="images/promo1.jpeg" alt="Imagen 1"></div>
+                      <div class="swiper-slide"><img class="photo" src="images/promo2.jpeg" alt="Imagen 2"></div>
+                      <div class="swiper-slide"><img class="photo" src="images/promo3.jpeg" alt="Imagen 1"></div>
+                      <div class="swiper-slide"><img class="photo" src="images/promo4.jpeg" alt="Imagen 2"></div>
+                      <div class="swiper-slide"><img class="photo" src="images/promo5.jpeg" alt="Imagen 1"></div>
+                      <div class="swiper-slide"><img class="photo" src="images/promo7.jpeg" alt="Imagen 2"></div>
+                      <div class="swiper-slide"><img class="photo" src="images/promo8.jpeg" alt="Imagen 1"></div>
+                    </div>
+                </div>
         </div>
         <div class="peliculas1">
             <a href="">
@@ -94,14 +105,22 @@
 <footer class="footer">
 </footer>
 
-    <?php
-        include("send.php");
-    ?>
-
     <script>
         function myFunction() {
             window.location.href="http://localhost/cinema"
         }
     </script>
-
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js">
+    </script>
+    <script class="carru">
+        var swiper = new Swiper('.swiper-container', {
+        slidesPerView: 'auto', // Muestra tantas imágenes como quepan en el contenedor
+        spaceBetween: 20, // Espacio entre las imágenes
+        loop: true, // Activa el modo bucle
+        autoplay: {
+        delay: 5000, // Intervalo de cambio entre imágenes en milisegundos
+        disableOnInteraction: false, // Permite la interacción del usuario (por ejemplo, hacer clic en una imagen para detener el carrusel)
+    },
+  });
+    </script>
 </html>
