@@ -19,38 +19,32 @@
     <div class="formu">
         <div class="formu1">
             <h2>Informacion de la pelicula</h2>
-            <form class="formulario">
+            <form class="formulario" action="process_form.php" method="POST" enctype="multipart/form-data">
                 <fieldset>
                     <div class="contenedor-campos">
                         <div class="campo">
-                            <label for="name">
+                            <label for="nombre">
                                 Nombre
                             </label>
-                            <input type="text" name="name" id="name" placeholder="Nombre de la pelicula"> 
+                            <input type="text" name="name" id="name" placeholder="Nombre de la pelicula">
                         </div>
                         <div class="campo">
-                            <label for="phone">
+                            <label for="categoria">
                                 Categoria
                             </label>
-                            <select id="miSelect" onchange="redireccionar()">
+                            <select name="category">
                                 <option value="">Categorias</option>
-                                <option value="">Animadas</option>
-                                <option value="">Comedia</option>
-                                <option value="">Romanticas</option>
-                                <option value="">Terror</option>
+                                <option value="Animadas">Animadas</option>
+                                <option value="Comedia">Comedia</option>
+                                <option value="Romanticas">Romanticas</option>
+                                <option value="Terror">Terror</option>
                             </select>
                         </div>
                         <div class="campo">
-                            <label for="phone">
-                                Sinopsis
-                            </label>
-                            <input type="text" name="sinop" id="sinop" placeholder="Añade la sinopsis">
-                        </div>
-                        <div class="campo">
-                            <label for="email">
+                            <label for="poster">
                                 Poster
                             </label>
-                            <input type="file" name="file" id="file" placeholder="Sube tu iamgen">
+                            <input type="file" name="file" id="file" placeholder="Sube tu imagen">
                         </div>
                     </div>
                     <div class="buttom">

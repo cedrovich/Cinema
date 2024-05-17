@@ -8,7 +8,15 @@
 </head>
 <header>
     <div class="encabezado">
-        <a href=""></a>
+        <nav class="back">
+            <select id="miSelect" onchange="redireccionar()">
+                <option value="">Categorias</option>
+                <option value="animadas.php">Animadas</option>
+                <option value="comedia.php">Comedia</option>
+                <option value="romanticas.php">Romanticas</option>
+                <option value="terror.php">Terror</option>
+            </select>
+        </nav>
         <h1>Terror</h1>
         <nav class="back">
             <a href="../index.php">Regresar</a>
@@ -16,9 +24,21 @@
     </div>
 </header>
 <body>
-    
+    <div class="princ">
+        <p>peliculas</p>
+    </div>
 </body>
 <footer>
 
 </footer>
+
+<script>
+    function redireccionar() {
+  var seleccion = document.getElementById("miSelect").value;
+  if (seleccion !== "") {
+    window.location.href = seleccion;
+  }
+}
+</script>
+
 </html>

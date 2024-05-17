@@ -22,9 +22,12 @@ html{
     display: flex;
 }
 
+.back{
+    margin: 0rem 2rem;
+}
+
 .back > a{
     text-decoration: none;
-    margin-left: 1rem;
     color: var(--blanco);
     font-weight: bold;
 }
@@ -33,4 +36,15 @@ html{
     background-color: var(--blanco);
     border-radius: .3rem;
     color: var(--secundario);
+}
+
+body{
+    background-color: var(--secundario);
+}
+
+.princ{
+    background-color: var(--blanco);
+    margin: 3rem;
+    padding: 10rem;
+    border-radius: 2rem;
 }
