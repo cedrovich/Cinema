@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -19,20 +20,20 @@
     <div class="formu">
         <div class="formu1">
             <h2>Informacion de la pelicula</h2>
-            <form class="formulario" action="process_form.php" method="POST" enctype="multipart/form-data">
+            <form class="formulario" action="http://localhost:4000/api/movies" method="POST" enctype="multipart/form-data">
                 <fieldset>
                     <div class="contenedor-campos">
                         <div class="campo">
-                            <label for="nombre">
+                            <label for="name">
                                 Nombre
                             </label>
-                            <input type="text" name="name" id="name" placeholder="Nombre de la pelicula">
+                            <input type="text" name="name" id="name" placeholder="Nombre de la pelicula" required>
                         </div>
                         <div class="campo">
-                            <label for="categoria">
+                            <label for="category">
                                 Categoria
                             </label>
-                            <select name="category">
+                            <select name="category" id="category" required>
                                 <option value="">Categorias</option>
                                 <option value="Animadas">Animadas</option>
                                 <option value="Comedia">Comedia</option>
@@ -41,10 +42,10 @@
                             </select>
                         </div>
                         <div class="campo">
-                            <label for="poster">
+                            <label for="file">
                                 Poster
                             </label>
-                            <input type="file" name="file" id="file" placeholder="Sube tu imagen">
+                            <input type="file" name="file" id="file" placeholder="Sube tu imagen" required>
                         </div>
                     </div>
                     <div class="buttom">

@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -46,74 +47,24 @@
                 </div>
         </div>
         <div class="peliculas1">
-            <a href="">
-                <section class="pelis sombra">   
-                    <img src="images/peli1.png" alt=""> 
-                    <h3>*Nombre*</h3>   
-                </section> 
-            </a>  
-            <a href="">
-                <section class="pelis sombra">   
-                    <img src="images/peli2.jpg" alt=""> 
-                    <h3>*Nombre*</h3>   
-                </section> 
-            </a>
-            <a href="">
-                <section class="pelis sombra">
-                    <img src="images/peli3.jpg" alt="">    
-                    <h3>*Nombre*</h3>   
-                </section> 
-            </a>
-            <a href="">
-                <section class="pelis sombra">   
-                    <img src="images/peli4.jpg" alt=""> 
-                    <h3>*Nombre*</h3>   
-                </section>  
-            </a>
+            <!-- Películas se cargarán aquí -->
         </div>
         <div class="peliculas2">
-            <a href="">
-                <section class="pelis sombra">   
-                    <img src="images/peli5.jpg" alt=""> 
-                    <h3>*Nombre*</h3>   
-                </section>
-            </a>   
-            <a href="">
-                <section class="pelis sombra">   
-                    <img src="images/peli6.jpg" alt=""> 
-                    <h3>*Nombre*</h3>   
-                </section> 
-            </a>
-            <a href="">
-                <section class="pelis sombra">   
-                    <img src="images/peli7.jpg" alt=""> 
-                    <h3>*Nombre*</h3>   
-                </section> 
-            </a>
-          <a href="">
-            <section class="pelis sombra">   
-                <img src="images/peli8.jpg" alt=""> 
-                <h3>*Nombre*</h3>   
-            </section>  
-          </a>
+            <!-- Películas se cargarán aquí -->
         </div>
     </div>
 </body>
 <footer class="footer">
 </footer>
 
-    <script>
-        function myFunction() {
-            window.location.href="http://localhost/cinema"
-        }
-    </script>
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js">
-    </script>
-
-    
-
-    <script class="carru">
-        var swiper = new Swiper('.swiper-container', {
+<script>
+    function myFunction() {
+        window.location.href="http://localhost/cinema"
+    }
+</script>
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script class="carru">
+    var swiper = new Swiper('.swiper-container', {
         slidesPerView: 'auto',
         spaceBetween: 20,
         loop: true,
@@ -129,6 +80,6 @@
     window.location.href = "categorias/" + seleccion;
   }
 }
-
-    </script>
+</script>
+<script src="script.js"></script>
 </html>
