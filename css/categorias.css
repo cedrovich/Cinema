@@ -45,6 +45,6 @@ body{
 .princ{
     background-color: var(--blanco);
     margin: 3rem;
-    padding: 10rem;
     border-radius: 2rem;
+    padding: 3rem;
 }

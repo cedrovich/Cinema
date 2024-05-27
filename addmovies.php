@@ -20,7 +20,7 @@
     <div class="formu">
         <div class="formu1">
             <h2>Informacion de la pelicula</h2>
-            <form class="formulario" action="http://localhost:4000/api/movies" method="POST" enctype="multipart/form-data">
+            <form class="formulario" id="form_movie" enctype="multipart/form-data">
                 <fieldset>
                     <div class="contenedor-campos">
                         <div class="campo">
@@ -55,6 +55,7 @@
             </form>
         </div>
     </div>
+    <script src="script.js"></script>
 </body>
 <footer>
 

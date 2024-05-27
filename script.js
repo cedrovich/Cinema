@@ -1,56 +1,113 @@
-// script.js
-document.addEventListener('DOMContentLoaded', function() {
-    fetchMovies();
-});
-
-function fetchMovies() {
-    const url = 'http://localhost:4000/api/movies';
-
-    fetch(url)
-        .then(response => response.json())
+document.addEventListener('DOMContentLoaded', () => {
+    // Realizar una solicitud GET para obtener los datos de la API
+    fetch('http://localhost:4000/api/movies')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Error al obtener los datos de la pelicula.');
+            }
+            return response.json();
+        })
         .then(data => {
+            console.log('Datos de la pelicula obtenidos:', data);
+            // Llamar a la función para desplegar los datos en la página HTML
             displayMovies(data);
         })
         .catch(error => {
-            console.error('Error:', error);
-            document.querySelector('.princ').innerText = 'Hubo un error al cargar las películas.';
+            console.error('Error al obtener los datos de la pelicila:', error);
+            // Aquí puedes manejar el error, por ejemplo, mostrando un mensaje de error al usuario.
+        });
+});
+
+// Función para desplegar las peliculas en la página HTML
+function displayMovies(movies, elementId) {
+    const movieList = document.getElementById('elementId');
+    movies.forEach(movie => {
+        const listItem = document.createElement('li');
+        listItem.classList.add('movie-item'); // Añadir clase para CSS
+
+        // Crear elemento de imagen
+        const img = document.createElement('img');
+        img.src = movie.poster_path; // Establecer la URL de la imagen
+        img.classList.add('movie-poster'); // Añadir clase para CSS
+
+        // Crear contenedor de texto
+        const textContainer = document.createElement('div');
+        textContainer.classList.add('movie-text'); // Añadir clase para CSS
+        textContainer.innerHTML = `<strong>${movie.name}</strong><br>${movie.category}`;
+
+        // Agregar la imagen y el contenedor de texto al listItem
+        listItem.appendChild(img);
+        listItem.appendChild(textContainer);
+    
+        // Agregar el listItem a la lista de películas
+        movieList.appendChild(listItem);
+    });
+}
+
+
+// Realizar una solicitud GET para obtener las películas por categoría
+function fetchMoviesByCategory(category, elementId) {
+    fetch(`http://localhost:4000/api/movies/${category}`)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Error al obtener los datos de películas.');
+            }
+            return response.json();
+        })
+        .then(data => {
+            console.log('Datos de películas obtenidos:', data);
+            // Llamar a la función para desplegar los datos en la página HTML
+            displayMovies(data, elementId);
+        })
+        .catch(error => {
+            console.error('Error al obtener los datos de películas:', error);
+            // Aquí puedes manejar el error, por ejemplo, mostrando un mensaje de error al usuario.
         });
 }
 
-function displayMovies(movies) {
-    const peliculas1 = document.querySelector('.peliculas1');
-    const peliculas2 = document.querySelector('.peliculas2');
-    let firstHalf = movies.slice(0, 4);
-    let secondHalf = movies.slice(4);
+// Llamar a la función con una categoría específica cuando el DOM esté listo
+document.addEventListener('DOMContentLoaded', () => {
+    const category = document.getElementById('movie-category').value; // Obtener la categoría desde un input oculto
+    fetchMoviesByCategory(category, 'elementId');
+});
 
-    firstHalf.forEach(movie => {
-        const movieElement = createMovieElement(movie);
-        peliculas1.appendChild(movieElement);
+//Recibir datos de formulario
+const formCreate = document.getElementById("form_movie");
+
+//Add an listener for the button
+formCreate.addEventListener("submit", (event) => {
+    event.preventDefault();
+    
+    //Get the values by them ids
+    let name = document.getElementById("name").value;
+    let category = document.getElementById("category").value;
+    let file = document.getElementById("file").files[0];
+    
+    let formData = new FormData();
+    formData.append('name', name);
+    formData.append('category', category);
+    formData.append('file', file);
+
+    //Send the values to api
+    fetch('http://localhost:4000/api/movies', {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Error al guardar pelicula.');
+        }
+        return response.json();
+    })
+    .then(data => {
+        console.log('Pelicula guardada exitosamente:', data);
+        alert("Pelicula guardada exitosamente");
+    })
+    .catch(error => {
+        console.error('Error al guardar pelicula:', error);
+        alert("Error al guardar pelicula");
     });
+});
 
-    secondHalf.forEach(movie => {
-        const movieElement = createMovieElement(movie);
-        peliculas2.appendChild(movieElement);
-    });
-}
 
-function createMovieElement(movie) {
-    const section = document.createElement('section');
-    section.classList.add('pelis', 'sombra');
-    
-    const img = document.createElement('img');
-    img.src = 'images/default.png'; // Usa una imagen por defecto o agrega una columna para imágenes en tu tabla
-    img.alt = movie.title;
-    
-    const h3 = document.createElement('h3');
-    h3.textContent = movie.title;
-    
-    section.appendChild(img);
-    section.appendChild(h3);
-    
-    const link = document.createElement('a');
-    link.href = '';
-    link.appendChild(section);
 
-    return link;
-}

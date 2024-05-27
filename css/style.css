@@ -107,20 +107,29 @@ body{
 
 
 .peliculas1{
-    border-top-left-radius: .7rem;
-    border-top-right-radius: .7rem;
+    border-radius: 1.5rem;
     background-color: var(--blanco);
     display: flex;
     justify-content: center;
 }
 
-.peliculas2{
-    border-bottom-left-radius: .7rem;
-    border-bottom-right-radius: .7rem;
-    background-color: var(--blanco);
+.movie-item {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+    list-style-type: none; /* Para eliminar los puntos de la lista */
 }
+
+.movie-poster {
+    max-width: 200px; /* Ajusta el ancho máximo según tus necesidades */
+    margin-bottom: 10px;
+}
+
+.movie-text {
+    text-align: center;
+}
+
 
 .pelis{
     display: flex;
@@ -134,6 +143,24 @@ body{
     margin: 1rem;
 
 }
+
+.movie-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+    list-style-type: none; /* Para eliminar los puntos de la lista */
+}
+
+.movie-poster {
+    max-width: 200px; /* Ajusta el ancho máximo según tus necesidades */
+    margin-bottom: 10px;
+}
+
+.movie-text {
+    text-align: center;
+}
+
 
 .pelis:hover{
     padding: .1rem;

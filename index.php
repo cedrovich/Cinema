@@ -47,10 +47,7 @@
                 </div>
         </div>
         <div class="peliculas1">
-            <!-- Películas se cargarán aquí -->
-        </div>
-        <div class="peliculas2">
-            <!-- Películas se cargarán aquí -->
+            <ul id="elementId"></ul>
         </div>
     </div>
 </body>

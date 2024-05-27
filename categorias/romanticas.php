@@ -25,8 +25,11 @@
 </header>
 <body>
     <div class="princ">
-        <p>peliculas</p>
+            <ul id="movie-complete-list"></ul>
+            <input type="hidden" id="movie-category" value="Romanticas">
+            <!-- Películas se cargarán aquí -->
     </div>
+    
 </body>
 <footer>
 
@@ -40,5 +43,5 @@
   }
 }
 </script>
-
+<script src="../script-category.js"></script>
 </html>

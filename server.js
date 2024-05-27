@@ -2,7 +2,7 @@
 const express = require('express');
 const cors = require('cors');
 const multer = require('multer');
-const conexion = require('./conexion');
+const conexion = require('./db-config');
 
 //Initialize app
 const app = express();
@@ -50,12 +50,26 @@ app.get('/api/movies', (req, res) => {
         res.send(results);
     });
 })
+//Checar
+app.get('/api/movies/:category', (req, res) => {
+    const category = req.params.category;
+    conexion.query("SELECT * FROM films WHERE category = ?", [category], (error, results) => {
+        if (error) {
+            console.error("Error al ejecutar la consulta:", error);
+            res.status(500).json({ error: 'Error al obtener datos de la base de datos' });
+            return;
+        }
+        res.json(results); // Enviar los resultados como respuesta JSON al frontend
+    });
+});
+
+
 
 /*
  *   Create a new movie by using post method
  */
 
-app.post('/api/movies', upload.single('image'), (req, res) => {
+app.post('/api/movies', upload.single('file'), (req, res) => {
     const { name, category } = req.body;
     const poster_path = "uploads/" + req.file.filename;
 
@@ -72,35 +86,6 @@ app.post('/api/movies', upload.single('image'), (req, res) => {
         }
 
         res.status(201).json({ message: 'Película añadida exitosamente' });
-    });
-});
-
-
-/*
- *   Delete movie from DB
- */
-
-app.delete('/api/movies/:id', (req, res) => {
-    const id = req.params.id;
-
-    // Verificar si el ID proporcionado es un número válido
-    if (isNaN(id)) {
-        return res.status(400).json({ error: 'El ID debe ser un número válido' });
-    }
-
-    // Eliminar la película de la base de datos
-    conexion.query("DELETE FROM films WHERE id = ?", [id], (error, result) => {
-        if (error) {
-            console.error("Error al eliminar la película:", error);
-            return res.status(500).json({ error: 'Error al eliminar la película de la base de datos' });
-        }
-
-        // Verificar si se eliminó algún registro
-        if (result.affectedRows === 0) {
-            return res.status(404).json({ error: 'La película con el ID proporcionado no existe' });
-        }
-
-        res.status(200).json({ message: 'Película eliminada exitosamente' }); // Devolver un mensaje de éxito
     });
 });
 
