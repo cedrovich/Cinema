@@ -1,7 +1,8 @@
 // Función para desplegar los datos de películas en la página HTML
 function displayMovies(movies, elementId) {
     const movieList = document.getElementById(elementId);
-    movieList.innerHTML = ''; // Limpiar la lista antes de agregar nuevas películas
+    // Limpiar la lista antes de agregar nuevas películas
+    movieList.innerHTML = ''; 
     
     movies.forEach(movie => {
         const listItem = document.createElement('li');
@@ -20,7 +21,7 @@ function displayMovies(movies, elementId) {
         // Agregar la imagen y el contenedor de texto al listItem
         listItem.appendChild(img);
         listItem.appendChild(textContainer);
-    
+
         // Agregar el listItem a la lista de películas
         movieList.appendChild(listItem);
     });

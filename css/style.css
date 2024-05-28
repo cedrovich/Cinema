@@ -70,12 +70,12 @@ body{
     background-color: var(--blanco);
     padding: 1rem 2rem 3rem 2rem;
     margin-bottom: 5rem;
-    height: 20rem;
+    height: 30rem;
 
 }
 
 .photo{
-    width: 27rem;
+    width: 20rem;
     margin-top: 0;
 }
 
@@ -113,23 +113,33 @@ body{
     justify-content: center;
 }
 
+#elementId {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Espacio entre los elementos */
+    padding: 0;
+}
+
 .movie-item {
+    flex: 1 1 calc(33.333% - 20px); /* Tres elementos por fila */
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 20px;
-    list-style-type: none; /* Para eliminar los puntos de la lista */
+    list-style-type: none; /* Eliminar los puntos de la lista */
+    background: #f5f5f5; /* Fondo opcional para mejor visualización */
+    padding: 10px;
+    border-radius: 5px; /* Bordes redondeados opcionales */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra opcional */
 }
 
 .movie-poster {
-    max-width: 200px; /* Ajusta el ancho máximo según tus necesidades */
+    width: 25rem; /* Ajusta el ancho máximo según tus necesidades */
     margin-bottom: 10px;
 }
 
 .movie-text {
     text-align: center;
 }
-
 
 .pelis{
     display: flex;
@@ -153,7 +163,7 @@ body{
 }
 
 .movie-poster {
-    max-width: 200px; /* Ajusta el ancho máximo según tus necesidades */
+    max-width: 20rem; /* Ajusta el ancho máximo según tus necesidades */
     margin-bottom: 10px;
 }
 
@@ -168,14 +178,8 @@ body{
     color: var(--blanco);
 }
 
-.peliculas2 > a{
-    text-decoration: none;
-    margin: 1rem;
-}
-
 img{
-    border-radius: 2rem;
-    width: 10rem;
+    width: 25rem;
     margin-top: 2rem;
     padding: 1rem 2rem ;
 }

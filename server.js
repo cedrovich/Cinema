@@ -1,20 +1,21 @@
-//Imports
+//Importaciones
 const express = require('express');
 const cors = require('cors');
 const multer = require('multer');
 const conexion = require('./db-config');
 
-//Initialize app
+//Inicializacion del Express
 const app = express();
 
-//Use imports
+//Uso de los Imports
 app.use(express.json());
 app.use(cors());
 
 // Configurar multer para manejar la carga de archivos
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
-        cb(null, 'uploads/'); // Definir la carpeta de destino para guardar los archivos
+        cb(null, 'uploads/');
+        cb(null, 'categorias/uploads/'); // Definir la carpeta de destino para guardar los archivos
     },
     filename: function (req, file, cb) {
         // Obtener la fecha actual en formato YYYY-MM-DD
@@ -28,18 +29,13 @@ const storage = multer.diskStorage({
   
 const upload = multer({ storage: storage });  
 
-/*
- *  METHODS
- */
-
 //Root of api
 app.get('/', (req, res) => {
     res.send('API del cine');
 })
 
-/*
- *   Visualize movies of DB
- */
+//Visualize movies of DB
+
 app.get('/api/movies', (req, res) => {
     conexion.query("SELECT * FROM films", (error, results) => {
         if (error) {
@@ -50,7 +46,8 @@ app.get('/api/movies', (req, res) => {
         res.send(results);
     });
 })
-//Checar
+
+//Visualize movies by category
 app.get('/api/movies/:category', (req, res) => {
     const category = req.params.category;
     conexion.query("SELECT * FROM films WHERE category = ?", [category], (error, results) => {
@@ -63,11 +60,7 @@ app.get('/api/movies/:category', (req, res) => {
     });
 });
 
-
-
-/*
- *   Create a new movie by using post method
- */
+//Create a new movie by using post method
 
 app.post('/api/movies', upload.single('file'), (req, res) => {
     const { name, category } = req.body;
@@ -89,6 +82,6 @@ app.post('/api/movies', upload.single('file'), (req, res) => {
     });
 });
 
-//port config
+//Configuracion del Puerto
 const port = process.env.port || 4000;
 app.listen(port, () => console.log(`Escuchando en el puerto ${port}...`));

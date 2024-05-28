@@ -38,12 +38,11 @@ function displayMovies(movies, elementId) {
         // Agregar la imagen y el contenedor de texto al listItem
         listItem.appendChild(img);
         listItem.appendChild(textContainer);
-    
+
         // Agregar el listItem a la lista de películas
         movieList.appendChild(listItem);
     });
 }
-
 
 // Realizar una solicitud GET para obtener las películas por categoría
 function fetchMoviesByCategory(category, elementId) {
@@ -74,11 +73,11 @@ document.addEventListener('DOMContentLoaded', () => {
 //Recibir datos de formulario
 const formCreate = document.getElementById("form_movie");
 
-//Add an listener for the button
+//Añade un escuchador para el boton de Subir
 formCreate.addEventListener("submit", (event) => {
     event.preventDefault();
     
-    //Get the values by them ids
+    //Obtiene los valores mediante sus IDS
     let name = document.getElementById("name").value;
     let category = document.getElementById("category").value;
     let file = document.getElementById("file").files[0];
@@ -88,7 +87,7 @@ formCreate.addEventListener("submit", (event) => {
     formData.append('category', category);
     formData.append('file', file);
 
-    //Send the values to api
+    //Enivia los datos a la API
     fetch('http://localhost:4000/api/movies', {
         method: 'POST',
         body: formData
@@ -110,4 +109,21 @@ formCreate.addEventListener("submit", (event) => {
 });
 
 
+// Función para agregar imágenes al carrusel
+function addImagesToCarousel(movies) {
+    const swiperWrapper = document.querySelector('.swiper-wrapper');
+
+    movies.forEach(movie => {
+        const swiperSlide = document.createElement('div');
+        swiperSlide.classList.add('swiper-slide');
+
+        const img = document.createElement('img');
+        img.classList.add('photo');
+        img.src = movie.poster_path;
+        img.alt = movie.name;
+
+        swiperSlide.appendChild(img);
+        swiperWrapper.appendChild(swiperSlide);
+    });
+}
 

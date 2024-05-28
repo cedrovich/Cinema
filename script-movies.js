@@ -1,4 +1,4 @@
-// Display movies data from DB
+// Muestra los datos de las peliculas desde la Base de Datos
 
 document.addEventListener('DOMContentLoaded', () => {
     // Realizar una solicitud GET para obtener los datos de la API
@@ -16,7 +16,6 @@ document.addEventListener('DOMContentLoaded', () => {
         })
         .catch(error => {
             console.error('Error al obtener los datos de películas:', error);
-            // Aquí puedes manejar el error, por ejemplo, mostrando un mensaje de error al usuario.
         });
 });
 
@@ -52,38 +51,14 @@ function displayMovies(movies) {
     });
 }
 
-// Delete movie from DB
-function deleteMovie(movieId) {
-    if (confirm('¿Estás seguro de que quieres eliminar esta película?')) {
-        // Make a delete request to api
-        fetch(`http://localhost:4000/api/movies/${movieId}`, {
-            method: 'DELETE'
-        })
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Error al eliminar la película.');
-            }
-            return response.json();
-        })
-        .then(data => {
-            console.log('Película eliminada:', data);
-            // Aquí puedes actualizar la lista de películas en la página si lo deseas
-        })
-        .catch(error => {
-            console.error('Error al eliminar la película:', error);
-            // Aquí puedes manejar el error, por ejemplo, mostrando un mensaje de error al usuario.
-        });
-    }
-}
-
-// Create new movie to DB
+// Añadir la pelicula a la Base de Datos
 const formCreate = document.getElementById("saveMovie");
 
-// Add an event listener for the button
+// Añade un escuchador para el boton de Subir
 formCreate.addEventListener("submit", (event) => {
     event.preventDefault();
     
-    // Get the values by their ids
+    // Obtiene los datos por sus ids
     let movieName = document.getElementById("name").value;
     let movieCategory = document.getElementById("category").value;
     let movieImage = document.getElementById("image").files[0];
@@ -93,7 +68,7 @@ formCreate.addEventListener("submit", (event) => {
     formData.append('category', movieCategory);
     formData.append('image', movieImage);
 
-    // Send the values to api
+    // Envia los datos obtenidos a la API
     fetch('http://localhost:4000/api/movies', {
         method: 'POST',
         body: formData

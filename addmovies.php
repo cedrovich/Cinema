@@ -17,6 +17,7 @@
     </div>
 </header>
 <body>
+    <!-- Formulario para agregar peliculas a la Base de Datos -->
     <div class="formu">
         <div class="formu1">
             <h2>Informacion de la pelicula</h2>
@@ -55,6 +56,8 @@
             </form>
         </div>
     </div>
+    
+    <!-- Link para el Script de Lectura -->
     <script src="script.js"></script>
 </body>
 <footer>
