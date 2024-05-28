@@ -60,7 +60,7 @@
     <!-- Link para el Script de Lectura -->
     <script src="script.js"></script>
 </body>
-<footer>
-
+<footer class="footer">
+    <p>Desarrollo de Back End - Edrick León
 </footer>
 </html>

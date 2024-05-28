@@ -58,3 +58,10 @@ body{
 .campo{
     margin: 2rem;
 }
+
+.footer{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    color: var(--blanco);
+}

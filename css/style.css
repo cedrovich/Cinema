@@ -193,3 +193,10 @@ img{
 }
 
 /* Todo lo del Footer */
+
+.footer{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    color: var(--blanco);
+}

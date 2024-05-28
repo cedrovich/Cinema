@@ -31,8 +31,8 @@
     </div>
     
 </body>
-<footer>
-
+<footer class="footer">
+    <p>Desarrollo de Back End - Edrick León
 </footer>
 
 <script>

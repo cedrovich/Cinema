@@ -59,6 +59,7 @@
     </div>
 </body>
 <footer class="footer">
+    <p>Desarrollo de Back End - Edrick León
 </footer>
 
 <!-- Script para redireccionarme a las paginas de las categorias -->

@@ -40,6 +40,7 @@ html{
 
 body{
     background-color: var(--secundario);
+    position: relative;
 }
 
 .princ{
@@ -75,4 +76,11 @@ body{
 
 .movie-text {
     text-align: center;
+}
+
+.footer{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    color: var(--blanco);
 }
